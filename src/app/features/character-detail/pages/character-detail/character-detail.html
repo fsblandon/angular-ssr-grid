@@ -1,0 +1,26 @@
+@if (vm$ | async; as vm) {
+    <div>
+        <img [src]="vm.character.image" [alt]="vm.character.name" />
+
+        <h1>{{ vm.character.name }}</h1>
+
+        <p>Status: {{ vm.character.status }}</p>
+        <p>Species: {{ vm.character.species }}</p>
+        <p>Gender: {{ vm.character.gender }}</p>
+        <p>Origin: {{ vm.character.origin.name }}</p>
+        <p>Location: {{ vm.character.location.name }}</p>
+        
+        <button
+            (click)="toggleFavorite(vm.character, vm.isFavorite)"
+            >
+            @if(vm.isFavorite) {
+                <span>❤️ Quitar de favoritos</span>
+            }
+            @if(!vm.isFavorite) {
+                <span>🤍 Agregar a favoritos</span>
+            }
+        </button>
+        
+
+    </div>
+}

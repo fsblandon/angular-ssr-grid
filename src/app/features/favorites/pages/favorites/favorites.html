@@ -1,0 +1,23 @@
+<section>
+    <h1>Favoritos</h1>
+
+    @if(favorites$ | async; as favorites) {
+        <ng-container>
+            @if(favorites.length === 0) {
+                <div class="empty">
+                    No tienes favoritos aún
+                </div>
+            }
+            <div class="grid">
+                @for(character of favorites; track $index) {
+                    <app-favorite-card
+                        [character]="character"
+                        (remove)="remove(character.id)">
+                    </app-favorite-card>
+                }
+                
+            </div>
+        </ng-container>
+    }
+    
+</section>
