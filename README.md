@@ -68,6 +68,4 @@ http://localhost:4000
 ```
 
 ## Autor
-
 Fredy Santiago Blandon Ocampo
-**GitHub**: https://github.com/fsblandon
